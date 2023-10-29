@@ -3,5 +3,12 @@
 version = 3
 
 [[package]]
+name = "new_lib"
+version = "0.1.0"
+
+[[package]]
 name = "r7"
 version = "0.1.0"
+dependencies = [
+ "new_lib",
+]
