@@ -1,0 +1,5 @@
+pub fn default_greeting()->String
+{
+    let message = String::from("Hello world");
+    message
+}
