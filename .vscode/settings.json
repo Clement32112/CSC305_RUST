@@ -1,6 +1,7 @@
 {
     "rust-analyzer.linkedProjects": [
-        ".\\Cargo.toml"
-    ],
-    "rust-analyzer.showUnlinkedFileNotification": false
+        "./data_type_example/Cargo.toml",
+        "./data_type_example/Cargo.toml",
+        "./Cargo.toml"
+    ]
 }

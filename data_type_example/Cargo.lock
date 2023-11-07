@@ -5,15 +5,3 @@ version = 3
 [[package]]
 name = "data_type_example"
 version = "0.1.0"
-
-[[package]]
-name = "new_lib"
-version = "0.1.0"
-
-[[package]]
-name = "r7"
-version = "0.1.0"
-dependencies = [
- "data_type_example",
- "new_lib",
-]
