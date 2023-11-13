@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 //pub const vector:vec = vec!(1,2,3); ;
 pub mod tuple {
 

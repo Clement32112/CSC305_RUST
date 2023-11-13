@@ -1,4 +1,6 @@
+#[allow(dead_code)]
 pub mod integer {
+    
     pub fn run() {
         let max_integer8: i8 = i8::MAX;
         let min_integer8: i8 = i8::MIN;
@@ -82,7 +84,7 @@ pub mod float {
 pub mod textual {
     pub fn run() {
         let character = 'A';
-        let str = "has";
+      //  let str = "has";
         println!("unicode: \u{2518}");
         println!("char: {} ", character);
         println!("unicode: \u{2518}");
