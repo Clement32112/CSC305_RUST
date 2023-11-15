@@ -7,6 +7,7 @@ use data_type_example::how_to_hold_data;
 use how_to_hold_data::primitive::{scalar,compound};
 #[allow(unused_imports)]
 use how_to_hold_data::derived::user_derived;
+use how_to_hold_data::derived::user_derived::structs::Movable;
 
 //use data_type_example::how_to_hold_data::primitive::compound;
 use greetings::{english, french, spanish};
@@ -39,9 +40,14 @@ fn greetins(){
     println!("{}", spanish::default_greeting());
     println!("{}", french::default_greeting());
     println!("{}", greeting_from_lib());
-    prin    
 
 }
 fn main() {
     println!("{}", "Hello world");   
-    }
+    let mut my_point: user_derived::structs::Point = user_derived::structs::Point{x:1,y:2};
+    my_point.display_coords();
+    println!("");
+    my_point.move_left(12);
+    my_point.display_coords();
+    
+}
