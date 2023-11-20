@@ -9,9 +9,11 @@ use how_to_hold_data::primitive::{scalar,compound};
 use how_to_hold_data::derived::user_derived;
 use how_to_hold_data::derived::user_derived::structs::Movable;
 
+use lifetimes::lifetimes;
 //use data_type_example::how_to_hold_data::primitive::compound;
 use greetings::{english, french, spanish};
 use new_lib::greeting_from_lib;
+
 #[allow(dead_code)]
 fn view_data_types(){
     //Primitive
@@ -42,12 +44,17 @@ fn greetins(){
     println!("{}", greeting_from_lib());
 
 }
-fn main() {
-    println!("{}", "Hello world");   
+
+#[allow(dead_code)]
+fn point_example()
+{    println!("{}", "Hello world");   
     let mut my_point: user_derived::structs::Point = user_derived::structs::Point{x:1,y:2};
     my_point.display_coords();
     println!("");
     my_point.move_left(12);
     my_point.display_coords();
-    
+
+}
+fn main() {
+    lifetimes::life_time_scope();
 }
