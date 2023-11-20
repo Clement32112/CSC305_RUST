@@ -55,6 +55,8 @@ fn point_example()
     my_point.display_coords();
 
 }
+
 fn main() {
+    assert!(1==2);
     lifetimes::life_time_scope();
 }
