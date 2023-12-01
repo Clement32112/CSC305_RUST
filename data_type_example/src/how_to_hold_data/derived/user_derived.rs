@@ -25,7 +25,7 @@ pub mod structs {
         pub y:i32
     }
     struct Rectangle
-    
+
     {
         name:&'static str,
         top_left:Point,
@@ -61,11 +61,46 @@ pub mod structs {
 
     impl PartialEq for Rectangle
     {
-fn eq(&self, other: &Self) -> bool {
-    self.get_area() == other.get_area()
-} 
+        fn eq(&self, other: &Self) -> bool {
+            self.get_area() == other.get_area()
+        } 
     }
 
+    impl PartialOrd for Rectangle
+    {
+        fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+            self.get_area().partial_cmp(&other.get_area()) 
+
+        }
+    }
+
+    impl From<&'static str> for Rectangle{
+        fn from(s:&'static str) -> Rectangle
+        {
+            let mut parts = s.split(',');
+            let length = match parts.next(){
+
+                Some(val) => val.parse::<i32>().unwrap(),
+                None => 0,
+            };
+            let width = match parts.next(){
+                Some(val) => val.parse::<i32>().unwrap(),
+                None => 0,
+            };
+
+            let name = match parts.next()
+            {
+                Some(val) => val,
+                None => ""
+
+            };
+
+
+            Rectangle::new(length,width,name)
+        }
+
+    } 
+    //trait to move rectangle
     pub trait Movable
     {
         fn move_left(&mut self,steps:i32);
@@ -91,14 +126,46 @@ fn eq(&self, other: &Self) -> bool {
         marital_status: bool,
     }
     pub fn run(){
+
         let example:UserDefinedStruct = UserDefinedStruct {
             name:String::from("Clement"),age:12,dob:Date{day:12,month:12,year:12},
             marital_status:true};
         println!("{:#?}", example);
+        //default Rectangle decleration
         let rec1:Rectangle = Rectangle::default();
-        let rec2:Rectangle = Rectangle::new(12,12,"BON");
+        // Argument new Rectangel
+        println!("Rect created from new");
+        let rec2:Rectangle = Rectangle::new(1,1,"BON");
         println!("{}",rec2.get_area());
         println!("{}",rec2.get_length());
+
+        // Using string argument
+        println!("Rect created from strings: ");
+
+        let rec3_str = "10,20,Rect using From";
+        let rec3:Rectangle = Rectangle::from(rec3_str);
+
+        println!("rec area: {}",rec3.get_area());
+        println!("rec length {}",rec3.get_length());
+        print!("rec1 == rec2: ");
+        if rec2 == rec1
+        {
+            println!("TRUE");
+        }
+        else
+        {
+            println!("FALSE");
+        }
+
+        match rec1.partial_cmp(&rec2)
+        {
+            Some(std::cmp::Ordering::Less) => println!("Is less"),
+            Some(std::cmp::Ordering::Equal) => println!("Is the same"),
+            Some(std::cmp::Ordering::Greater) => println!("Is bigger"),
+            None => println!("failed to compare"),
+        }
+
+
     }
 }
 

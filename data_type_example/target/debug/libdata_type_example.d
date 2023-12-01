@@ -1,1 +1,0 @@
-/home/shadownight32112/Documents/coding_files/rust/pius_branch/data_type_example/target/debug/libdata_type_example.rlib: /home/shadownight32112/Documents/coding_files/rust/pius_branch/data_type_example/src/lib.rs
