@@ -1,21 +1,21 @@
-#[allow(dead_code)]
+#[allow(dead_code,unused_imports)]
+
 mod greetings;
 extern crate data_type_example;
 extern crate new_lib;
+extern crate function;
+
+use function::run;
 
 use data_type_example::how_to_hold_data;
 use how_to_hold_data::primitive::{scalar,compound};
-#[allow(unused_imports)]
 use how_to_hold_data::derived::user_derived;
 use how_to_hold_data::derived::pius_user_derived;
 use how_to_hold_data::derived::user_derived::structs::Movable;
-
-// use lifetimes::lifetimes;
-// use data_type_example::how_to_hold_data::primitive::compound;
 use greetings::{english, french, spanish};
 use new_lib::greeting_from_lib;
 
-#[allow(dead_code)]
+
 fn view_data_types(){
     //Primitive
     
@@ -37,7 +37,6 @@ fn view_data_types(){
 
 
 }
-#[allow(dead_code)]
 fn greetins(){
     println!("{}", english::default_greeting());
     println!("{}", spanish::default_greeting());
@@ -46,7 +45,6 @@ fn greetins(){
 
 }
 
-#[allow(dead_code)]
 fn point_example()
 {    println!("{}", "Hello world");   
     let mut my_point: user_derived::structs::Point = user_derived::structs::Point{x:1,y:2};
@@ -59,7 +57,9 @@ fn point_example()
 
 fn main() 
 {
-     pius_user_derived::run3(); 
+   function::pointer::run();
+    function::run();
+    //pius_user_derived::run3(); 
    // pius_user_derived::run();
    // piususer_derived::run2();
 

@@ -1,7 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        "./data_type_example/Cargo.toml",
-        "./data_type_example/Cargo.toml",
-        "./Cargo.toml"
-    ]
-}
