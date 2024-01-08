@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-new_lib = {path = "new_lib"}
-data_type_example = {path = "data_type_example"}
-lifetimes = {path = "lifetimes"}
-function = {path = "function"}
+new_lib = {path = "lib/new_lib"}
+data_type_example = {path = "lib/data_type_example"}
+lifetimes = {path = "lib/lifetimes"}
+function = {path = "lib/function"}

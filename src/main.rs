@@ -45,23 +45,11 @@ fn greetins(){
 
 }
 
-fn point_example()
-{    println!("{}", "Hello world");   
-    let mut my_point: user_derived::structs::Point = user_derived::structs::Point{x:1,y:2};
-    my_point.display_coords();
-    println!("");
-    my_point.move_left(12);
-    my_point.display_coords();
-
-}
+struct MacroRectangle{x:i32,y:i32,size:i32}
 
 fn main() 
 {
-   function::pointer::run();
-    function::run();
-    //pius_user_derived::run3(); 
-   // pius_user_derived::run();
-   // piususer_derived::run2();
+
 
 
 }
